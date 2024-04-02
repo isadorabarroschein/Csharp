@@ -41,3 +41,24 @@ public class Estudante : Pessoa {
     }
 
 }
+
+
+
+public class Funcionario : Pessoa {
+    private double salario;
+
+    public double Bonus() { 
+        return salario *0.1;
+    }
+
+    public Funcionario( string nome, int idade, string cpf, double salario) : base(nome, idade, cpf) {
+
+    }
+
+
+    public string Salario { 
+        get { return salario; }
+        set { salario = value; }
+    }
+    
+}
