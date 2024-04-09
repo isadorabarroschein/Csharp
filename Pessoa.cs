@@ -1,4 +1,4 @@
-piblic class Pessoa {
+public class Pessoa {
     privatw String nome;
     private int idade;
     private string cpf;
@@ -59,6 +59,19 @@ public class Funcionario : Pessoa {
     public string Salario { 
         get { return salario; }
         set { salario = value; }
-    }
-    
+    }mn 
+
 }
+
+
+public Diretor : Funcionario {
+    public Diretor(string nome, int idade, string cpf, double salario) : base ( nome, idade, cpf, salario) { 
+    
+    }
+    public overrider double Bonus{ 
+        return base.Bonus() + 1000;
+    }
+
+}
+
+ 
