@@ -56,51 +56,51 @@ public abstract class Veiculo
 
 public class Carro : Veiculo {
     private bool guidao;
-    public Carro(string nome, double motor, string modelo, string cor, bool volante) : base(nome, motor, modelo, cor){
-        this.volante = volante
+    public Carro(string nome, double motor, string modelo, string cor, bool guidao) : base(nome, motor, modelo, cor){
+        this.guidao = guidao;
     }
-    public string GetVolante(){
-        return volante;
+    public bool GetVolante(){
+        return guidao;
     }
     // Seter para o cor 
-    public void SetVolante(bool volante){
-        this.volante = volante;
+    public void SetVolante(bool guidao){
+        this.guidao = guidao;
     }
-    public abstract void Mover(){
+    public override void Mover(){
         Console.WriteLine($"{GetNome()} moveu!");   
     }
-    public abstract void Ligar(){
+    public override void Ligar(){
         Console.WriteLine($"{GetNome()} ligou!");   
     }
-    public abstract void Desligar(){
+    public override void Desligar(){
         Console.WriteLine($"{GetNome()} desligou!");   
     }
-    public abstract void Freiar(){
+    public override void Freiar(){
         Console.WriteLine($"{GetNome()} parou!");   
     } 
 }
 public class Moto : Veiculo {
     private bool guidao;
     public Moto(string nome, double motor, string modelo, string cor, bool guidao) : base(nome, motor, modelo, cor){
-        this.guidao = guidao
+        this.guidao = guidao;
     }
-    public string GetGuidao(){
+    public bool GetGuidao(){
         return guidao;
     }
     // Seter para o cor 
     public void SetGuidao(bool guidao){
         this.guidao = guidao;
     }
-    public abstract void Mover(){
+    public override void Mover(){
         Console.WriteLine($"{GetNome()} moveu!");   
     }
-    public abstract void Ligar(){
+    public override void Ligar(){
         Console.WriteLine($"{GetNome()} ligou!");   
     }
-    public abstract void Desligar(){
+    public override void Desligar(){
         Console.WriteLine($"{GetNome()} desligou!");   
     }
-    public abstract void Freiar(){
+    public override void Freiar(){
         Console.WriteLine($"{GetNome()} parou!");   
     } 
 }
@@ -108,13 +108,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        Carro carro = new Carro("opala", 4.0, 2000, "marrom", true);
+        Carro carro = new Carro("opala", 4.0, "2000", "marrom", true);
         carro.Ligar();
         carro.Mover();
         carro.Freiar();
         carro.Desligar();
 
-        Moto moto = new Moto("harley", 300, 2024, "preta", true);
+        Moto moto = new Moto("harley", 300, "2024", "preta", true);
         moto.Ligar();
         moto.Mover();
         moto.Freiar();
